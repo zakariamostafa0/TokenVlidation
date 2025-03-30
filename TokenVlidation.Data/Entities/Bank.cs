@@ -1,9 +1,15 @@
-﻿namespace TokenVlidation.Data.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TokenVlidation.Data.Entities
 {
     public class Bank
     {
-        public int Id { get; set; }
+        [Key]
+        public int BankID { get; set; }
+
         public string TermKey { get; set; }
         public string MerchantID { get; set; }
+
+        public virtual ICollection<SejourOrder> SejourOrders { get; set; }
     }
 }

@@ -18,7 +18,9 @@ namespace TokenVlidation
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddServiceRegisteration(builder.Configuration);
+            builder.Services
+                .AddInfrastructureDependencies()
+                .AddServiceRegisteration(builder.Configuration);
 
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
             {

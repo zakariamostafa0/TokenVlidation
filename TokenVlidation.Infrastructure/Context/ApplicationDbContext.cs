@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using TokenVlidation.Data.Entities;
 
 namespace TokenVlidation.Infrastructure.Context
@@ -16,6 +17,7 @@ namespace TokenVlidation.Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
