@@ -13,7 +13,7 @@ namespace TokenVlidation.Infrastructure.Context
 
         public DbSet<Token> Tokens { get; set; }
         public DbSet<Bank> Banks { get; set; }
-
+        public DbSet<SejourOrder> SejourOrders { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

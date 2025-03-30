@@ -14,6 +14,8 @@
   <ItemGroup>
     <Folder Include="Features\Order\Command\Validators\" />
     <Folder Include="Features\Order\Query\" />
+    <Folder Include="Features\Tokens\Command\Validators\" />
+    <Folder Include="Features\Tokens\Query\" />
   </ItemGroup>
 
   <ItemGroup>

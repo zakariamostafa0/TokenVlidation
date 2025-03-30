@@ -8,7 +8,6 @@ namespace TokenValidation.Core.Features.Order.Command.Handlers
     public class ProcessRefundCommandHandler : ResponseHandler, IRequestHandler<ProcessRefundCommand, Response<string>>
     {
         private readonly ITokenService _tokenService;
-        // Inject additional services for order, bank, and email logic.
         private readonly IOrderService _orderService;
         private readonly IBankService _bankService;
         private readonly IEmailService _emailService;
@@ -50,7 +49,7 @@ namespace TokenValidation.Core.Features.Order.Command.Handlers
             if (!refundSuccess)
                 return Unauthorized<string>("Bank refund request failed.");
 
-            // 6. Store Bank ID (assume this is part of IBankService)
+            //Store Bank ID
             await _bankService.StoreBankIDAsync(request.SejourOrderID, bankToken);
 
 

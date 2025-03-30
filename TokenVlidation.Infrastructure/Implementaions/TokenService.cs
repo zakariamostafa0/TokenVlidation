@@ -20,6 +20,11 @@ namespace TokenVlidation.Infrastructure.Implementaions
         {
             try
             {
+                var sejourOrderExists = await _context.SejourOrders.AnyAsync(o => o.SejourOrderID == sejourOrderId);
+                if (!sejourOrderExists)
+                {
+                    return "Error: SejourOrderID does not exist.";
+                }
                 int randomNumber = new Random().Next(1000, 9999);
                 var token = _encryptionService.EncryptToken(sejourOrderId, randomNumber);
 
